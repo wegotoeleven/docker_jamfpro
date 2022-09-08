@@ -1,2 +1,5 @@
 .DS_Store
 archive
+*.sql.gz
+*.sql
+*.war
