@@ -1,0 +1,25 @@
+version: "3.0"
+
+services:
+  jamf:
+    depends_on:
+      - mysql
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    image:
+    volumes:
+      - jamf-config:/config
+
+  mysql:
+    environment:
+    image:
+    volumes:
+      - mysql-data:/db
+
+volumes:
+  mysql-data:
+    driver: local
+  jamf-config:
+    driver: local
